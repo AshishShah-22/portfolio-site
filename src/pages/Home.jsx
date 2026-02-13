@@ -247,7 +247,7 @@ export default function Home() {
             <Link className="btn-primary" to="/projects">
               See work <ArrowRight className="h-4 w-4" />
             </Link>
-            <a className="btn-ghost" href="mailto:you@example.com">
+            <a className="btn-ghost" href="mailto:aahishshah22@gmail.com">
               Contact
             </a>
           </div>

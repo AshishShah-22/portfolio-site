@@ -70,14 +70,14 @@ export default function Layout() {
 
               <a
                 className="btn-ghost inline-flex"
-                href="mailto:you@example.com"
+                href="mailto:aahishshah22@gmail.com"
                 aria-label="Email"
               >
                 <Mail className="h-4 w-4" />
               </a>
               <a
                 className="btn-ghost inline-flex"
-                href="https://github.com/"
+                href="https://github.com/AshishShah-22"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
@@ -86,7 +86,7 @@ export default function Layout() {
               </a>
               <a
                 className="btn-ghost inline-flex"
-                href="https://linkedin.com/"
+                href="https://linkedin.com/in/ashish-shah-104745356"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
