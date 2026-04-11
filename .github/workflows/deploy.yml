@@ -32,6 +32,10 @@ jobs:
       
       - name: Build
         run: npm run build
+
+      - name: Copy static resume
+        run: |
+          cp ashish_RESUME.pdf dist/ || true
       
       - name: Setup Pages
         uses: actions/configure-pages@v4

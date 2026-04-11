@@ -6,7 +6,7 @@ import Projects from "./pages/Projects.jsx";
 
 export default function App() {
   return (
-    <Routes basename="/portfolio-site/">
+    <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />

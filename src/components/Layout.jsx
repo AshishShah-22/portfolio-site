@@ -62,7 +62,7 @@ export default function Layout() {
             <div className="flex items-center gap-2">
               <a
                 className="btn-ghost hidden sm:inline-flex"
-                href="/resume.pdf"
+                href={import.meta.env.BASE_URL + 'ashish_RESUME.pdf'}
                 download
               >
                 Download Resume <ArrowUpRight className="h-4 w-4" />

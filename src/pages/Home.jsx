@@ -137,7 +137,7 @@ export default function Home() {
               <div className="col-span-1">
                 <div className="relative mx-auto aspect-square w-full max-w-[200px] sm:max-w-[220px] md:max-w-[240px] overflow-hidden rounded-2xl border border-slate-200/10 bg-gradient-to-br from-white/10 to-white/0 ring-1 ring-slate-200/10">
                   <img
-                    src="/ashish_image.jpeg"
+                    src={import.meta.env.BASE_URL + "ashish_image.jpeg"}
                     alt="Ashish Shah"
                     className="h-full w-full object-cover object-center"
                   />
