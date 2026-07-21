@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const fileUrl = (name) => `${import.meta.env.BASE_URL}${encodeURIComponent(name)}`;
+
 const skills = [
   "Python",
   "Jupyter",
@@ -19,26 +21,57 @@ const skills = [
   "Docker",
 ];
 
-const highlights = [
+const achievements = [
   {
-    title: "Minimal UI, maximal clarity",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    chips: ["Design", "UX", "Bento"],
+    title: "Deloitte Internship",
+    body: "Internship completion certificate.",
+    chips: ["Internship", "Experience"],
+    url: fileUrl("deloitte_internship.pdf"),
   },
   {
-    title: "Production-minded frontend",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    chips: ["DX", "QA", "Maintainable"],
+    title: "Microsoft Learn Achievement",
+    body: "Achievement record from Microsoft Learn.",
+    chips: ["Achievement", "Microsoft"],
+    url: fileUrl("Achievements - ashishshah-6663 _ Microsoft Learn.pdf"),
+  },
+];
+
+const certificates = [
+  {
+    title: "AI Skill Certificate",
+    issuer: "Uploaded Certificate",
+    tags: ["AI", "Certificate"],
+    url: fileUrl("AI_skill_Ashish.pdf"),
   },
   {
-    title: "Polished motion, never loud",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-    chips: ["Framer", "Micro-interactions", "Delight"],
+    title: "SkillsBuild Completion",
+    issuer: "SkillsBuild",
+    tags: ["Certificate", "Completion"],
+    url: fileUrl("Completion Certificate _ SkillsBuild.pdf"),
   },
   {
-    title: "Interview-ready stories",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-    chips: ["STAR", "Impact", "Metrics"],
+    title: "JavaScript Certificate",
+    issuer: "Uploaded Certificate",
+    tags: ["Certificate"],
+    url: fileUrl("LUEJSMAR1251074.pdf"),
+  },
+  {
+    title: "Certificate ",
+    issuer: "Uploaded Certificate",
+    tags: ["Certificate"],
+    url: fileUrl("1m2n4t.pdf"),
+  },
+  {
+    title: "Certificate 9OAgv",
+    issuer: "Uploaded Certificate",
+    tags: ["Certificate"],
+    url: fileUrl("9OAgv.pdf"),
+  },
+  {
+    title: "Security Analyst Certificate",
+    issuer: "Uploaded Certificate",
+    tags: ["Certificate"],
+    url: fileUrl("https://drive.google.com/file/d/1QTF-igCqZ65qLDh-DvvZE_GEvfJb_wLz/view"),
   },
 ];
 
@@ -52,7 +85,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-function GlassCard({ title, body, chips }) {
+function GlassCard({ title, body, chips, url }) {
   return (
     <motion.div
       variants={item}
@@ -71,6 +104,18 @@ function GlassCard({ title, body, chips }) {
           </span>
         ))}
       </div>
+      {url ? (
+        <a
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          className="btn-ghost mt-4 inline-flex"
+        >
+          View Link <ArrowRight className="h-4 w-4" />
+        </a>
+      ) : (
+        <p className="mt-4 text-xs text-slate-400">Add your link here</p>
+      )}
     </motion.div>
   );
 }
@@ -203,10 +248,10 @@ export default function Home() {
         <motion.div variants={item} className="flex items-end justify-between">
           <div>
             <h2 className="text-xl font-semibold tracking-tight text-white">
-              What you get
+              Achievements & Certificates
             </h2>
             <p className="mt-1 text-sm text-slate-300">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Share verified achievements and certificate links for recruiters.
             </p>
           </div>
           <Link className="btn-ghost hidden sm:inline-flex" to="/about">
@@ -214,6 +259,11 @@ export default function Home() {
           </Link>
         </motion.div>
 
+        <motion.div variants={item} className="mt-5">
+          <h3 className="text-sm font-semibold tracking-tight text-white">
+            Achievements
+          </h3>
+        </motion.div>
         <motion.div
           variants={container}
           initial="hidden"
@@ -221,12 +271,36 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           className="mt-5 grid gap-3 md:grid-cols-2"
         >
-          {highlights.map((h) => (
+          {achievements.map((h) => (
             <GlassCard
               key={h.title}
               title={h.title}
               body={h.body}
               chips={h.chips}
+              url={h.url}
+            />
+          ))}
+        </motion.div>
+
+        <motion.div variants={item} className="mt-8">
+          <h3 className="text-sm font-semibold tracking-tight text-white">
+            Certificates
+          </h3>
+        </motion.div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mt-5 grid gap-3 md:grid-cols-2"
+        >
+          {certificates.map((cert) => (
+            <GlassCard
+              key={cert.title}
+              title={cert.title}
+              body={cert.issuer}
+              chips={cert.tags}
+              url={cert.url }
             />
           ))}
         </motion.div>
